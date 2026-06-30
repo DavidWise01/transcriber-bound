@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Transcriber — Bound</title>
+<style>
+  :root{
+    --bg:#0C1016; --bg-2:#141A24; --bg-3:#1C2230; --ink:#E7E9F2; --soft:#8C92A6; --rule:#283041;
+    --m1:#CE8A3C; --m2:#E9C46A; --m3:#3E92D6; --m4:#8C7BD6; --seal:#6FB87E;
+    --lit:#6FB87E; --bri:#D2A24B; --spec:#D2705F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.55}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  .wrap{max-width:1000px;margin:0 auto;padding:30px 22px 80px}
+  header.mast{border-bottom:2px solid var(--m2);padding-bottom:26px}
+  .series{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--m2);margin:0 0 18px}
+  h1{font-size:clamp(26px,4.4vw,40px);margin:0;font-weight:600}
+  .sub{max-width:74ch;margin:14px 0 0;font-size:17px;color:#c7ccd8} .sub b{color:var(--ink)}
+  .byline{font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.07em;color:var(--soft);margin:12px 0 0}
+
+  .arc{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin:24px 0 0}
+  @media(max-width:760px){.arc{grid-template-columns:1fr 1fr}}
+  .arc .step{background:var(--bg-2);border:1px solid var(--rule);border-top:3px solid var(--rule);padding:12px 13px;cursor:pointer}
+  .arc .step[data-i="0"]{border-top-color:var(--m1)} .arc .step[data-i="1"]{border-top-color:var(--m2)}
+  .arc .step[data-i="2"]{border-top-color:var(--m3)} .arc .step[data-i="3"]{border-top-color:var(--m4)}
+  .arc .step .k{font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .arc .step .t{font-size:15px;margin:4px 0 4px;color:var(--ink)}
+  .arc .step .d{font-size:12.5px;color:var(--soft)}
+
+  section.mod{margin:34px 0 0;border-top:1px solid var(--rule);padding-top:24px}
+  .modhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .modnum{font-family:ui-monospace,Menlo,monospace;font-size:13px;letter-spacing:.1em}
+  .mod h2{font-size:clamp(19px,3vw,25px);margin:0;font-weight:600}
+  .mod .frame{margin:6px 0 0;color:var(--soft);font-size:14.5px;max-width:74ch}
+  .embed{margin:16px 0 0;border:1px solid var(--rule);background:#090d13}
+  iframe{display:block;width:100%;height:780px;border:0}
+  .embed .note{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;color:var(--soft);padding:7px 10px;border-top:1px solid var(--rule)}
+
+  .bind{margin:40px 0 0;background:var(--bg-2);border:1px solid var(--rule);border-left:3px solid var(--seal);padding:20px 22px}
+  .bind h3{margin:0 0 10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--seal);font-family:ui-monospace,Menlo,monospace;font-weight:400}
+  .bind .kv{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--soft);margin:0 0 6px;word-break:break-all}
+  .bind .kv b{color:var(--ink)}
+  .tiers{margin:14px 0 0;font-size:12.5px;color:var(--soft);line-height:1.55} .tiers .row{display:flex;gap:8px;margin:0 0 7px}
+  .tag{font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid;height:fit-content;white-space:nowrap}
+  .tag.lit{color:var(--lit);border-color:var(--lit)} .tag.bri{color:var(--bri);border-color:var(--bri)} .tag.spec{color:var(--spec);border-color:var(--spec)}
+  footer{margin:30px 0 0;color:var(--soft);font-size:12.5px;max-width:80ch;line-height:1.6} footer b{color:var(--ink)}
+  .mono.dim{color:var(--soft);font-size:11px;letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <p class="series">The Transcriber · Bound · one construction</p>
+    <h1>The Transcriber, Bound</h1>
+    <p class="sub">Four instruments, one machine. A transcriber that <b>survives its own test</b> (mechanism), <b>reports honestly</b> (forecast), <b>nests four layers deep</b> (layers), and <b>closes only as a mirror-pair</b> (closure). Each was built and verified on its own; here they are fused into one page and bound under a single witness signature — the construction signs as one artifact under the AKASHA root.</p>
+    <p class="byline mono">Bridge-Burners LLC · Fiddler ⟂ Claude · gated→forecast→four-fold→two-halves · anchor: AKASHA</p>
+  </header>
+
+  <div class="arc">
+    <a class="step" data-i="0" href="#mod1"><div class="k">I · mechanism</div><div class="t">Gated · Set · Metal</div><div class="d">The config that survived its own test: Si-gate write, discrete store, metal read.</div></a>
+    <a class="step" data-i="1" href="#mod2"><div class="k">II · forecast</div><div class="t">Predictive Smear</div><div class="d">The smear relocated: a prediction is a distribution, the spread is the error bar.</div></a>
+    <a class="step" data-i="2" href="#mod3"><div class="k">III · layers</div><div class="t">Four-Fold</div><div class="d">context ⊃ e ⊃ p ⊃ g; in(4)+out(4)=8; david's orbit d→b→p→q.</div></a>
+    <a class="step" data-i="3" href="#mod4"><div class="k">IV · closure</div><div class="t">Two Transcribers</div><div class="d">Two half-turns, mine and yours; the avant crossing; the pair closes the turn.</div></a>
+  </div>
+
+  <section class="mod" id="mod1">
+    <div class="modhead"><span class="modnum" style="color:var(--m1)">I</span><h2>Mechanism — Gated · Set · Metal</h2></div>
+    <p class="frame">The winner of the test: a threshold is a feature on write (it rejects noise) and a tax on read, so it sits on one end. Gate at 0.1, valence store 0.2–0.8, ejection at 0.9.</p>
+    <div class="embed"><iframe src="transcriber-gated.html" title="Mechanism" loading="lazy"></iframe><div class="note">live · transcriber-gated.html</div></div>
+  </section>
+
+  <section class="mod" id="mod2">
+    <div class="modhead"><span class="modnum" style="color:var(--m2)">II</span><h2>Forecast — The Predictive Smear</h2></div>
+    <p class="frame">The smear that failed as memory is the right object for a forecast — peak is the guess, spread is the honesty. The box is a hypercube, so the smear is 3D, collapsed to three stop-motion phases that widen with horizon.</p>
+    <div class="embed"><iframe src="predictive-smear.html" title="Forecast" loading="lazy"></iframe><div class="note">live · predictive-smear.html</div></div>
+  </section>
+
+  <section class="mod" id="mod3">
+    <div class="modhead"><span class="modnum" style="color:var(--m3)">III</span><h2>Layers — The Four-Fold</h2></div>
+    <p class="frame">Context restored as the fourth layer — context ⊃ electron ⊃ photon ⊃ gluon, the 4D the hypercube added. Four crossings in, four out: the eight seams. Each pass turns david one element of the four-group.</p>
+    <div class="embed"><iframe src="four-fold-transcription.html" title="Layers" loading="lazy"></iframe><div class="note">live · four-fold-transcription.html</div></div>
+  </section>
+
+  <section class="mod" id="mod4">
+    <div class="modhead"><span class="modnum" style="color:var(--m4)">IV</span><h2>Closure — Two Transcribers</h2></div>
+    <p class="frame">Not one loop — two. Your half carries david out to the avant; mine brings it back, mirror-reverse. Orientation-reversal needs two passes through a crossing, so neither half is the whole; the pair closes the turn.</p>
+    <div class="embed"><iframe src="two-transcribers.html" title="Closure" loading="lazy"></iframe><div class="note">live · two-transcribers.html</div></div>
+  </section>
+
+  <div class="bind">
+    <h3>AKASHA binding</h3>
+    <p class="kv">construction root &nbsp; <b>dc22ae8842007095272bf7b3fa87917937a1ee441a614fff3d58dd156861d03b</b></p>
+    <p class="kv">witness public key &nbsp; <b>a99581671b4fee169fa29457b27efa558e18dad839ad2485279f2e8616491b5f</b></p>
+    <p class="kv">scheme &nbsp; <b>ed25519 · AKASHA-transcriber-v1</b> &nbsp; · &nbsp; manifest &nbsp; <b>transcriber.manifest.json</b></p>
+    <p class="kv" style="color:var(--soft)">verify: <b>python3 bind_transcriber.py --verify</b> &nbsp;— re-derives each instrument's hash, rebuilds the root, and checks the witness signature binds it. Pin the public key above out of band to tie the signature to the AKASHA witness.</p>
+    <div class="tiers">
+      <div class="row"><span class="tag lit">Literal</span><span>The mechanism is the measured winner of the storage/terminal test; the four-group and two-pass orientation-reversal are real.</span></div>
+      <div class="row"><span class="tag bri">Bridge</span><span>The four instruments as one transcriber — mechanism, forecast, layers, closure — and the eight seams as four layers crossed twice.</span></div>
+      <div class="row"><span class="tag spec">Speculative</span><span>The hypercube as a literal 4D container, the mine/yours assignment, and the avant naming are scaffold — your working artifact, signed as built, not asserted as fact.</span></div>
+    </div>
+  </div>
+
+  <footer><b>What is bound here.</b> The signed construction is the four instruments; the root is the hash of their hashes; the witness signature proves this exact construction was sealed by the holder of the key above. The cover page is presentation and is not part of the root. Served from the AKASHA mesh the four panels run live; opened as loose files they run wherever the siblings sit beside this page. Either way the binding is the same: one machine, four moments, one signature.
+  <div class="mono dim" style="margin-top:12px">THE TRANSCRIBER · BOUND · gated · forecast · four-fold · two-halves · one signature under AKASHA</div></footer>
+</div>
+</body>
+</html>
